@@ -53,8 +53,8 @@ chroot $CHROOT_DIR pacman-key --populate archlinux manjaro
 chroot $CHROOT_DIR pacman -Syu pacman --force --noconfirm
 [ -f "/etc/resolv.conf" ] && cp "/etc/resolv.conf" "$CHROOT_DIR/etc/"
 #chroot $CHROOT_DIR pacman-mirrors -g -c United_States
-#chroot $CHROOT_DIR pacman -S manjaroiso git base base-devel
-chroot $CHROOT_DIR pacman -S git base
+chroot $CHROOT_DIR pacman -S --force git base
+chroot $CHROOT_DIR pacman -S manjaroiso base-devel
 chroot $CHROOT_DIR
 umount "$CHROOT_DIR/dev/pts"
 umount "$CHROOT_DIR/dev"
